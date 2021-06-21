@@ -60,7 +60,7 @@
 
         <?php $sql = "SELECT scooterNo, rentAble FROM electroscooter";
         $result = $conn -> query($sql); ?>
-
+        
     <div class="contain_rent">
         <table class ="RentO">
             <thead>
@@ -70,7 +70,9 @@
                 </tr>
                 </thead>
                 <tbody>
-               <?php while($row = $result->fetch_assoc()){ ?>
+               <?php while($row = $result->fetch_assoc()){ 
+                   $resultRent
+                   ?>
                 <tr>
                     <th style="width: 50%"><?= $row["scooterNo"] ?></th>
                     <th style="width: 20%"><?= $row["rentAble"] ?></th>

@@ -40,10 +40,10 @@
             </ul>
         </nav>
         <section class="contain">
-            
+            <?php $randomImage = rand(1, 6); ?>
            
 
-<a href="index.php" style="height: 75%;
+        <a href="index.php" style="height: 75%;
                 width: 100%">
             <div class="contain_background" style ="background-image: url(images/<?=$randomImage?>.jpg);
                 height: 100%;
