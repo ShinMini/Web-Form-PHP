@@ -21,7 +21,7 @@
         $result = $conn->query($sql);
          // 아이디 정보 체크   
         if(isset($_SESSION['clientName'])){
-            $id = $_SESSION['id'];
+            $id = $_SESSION['clientid'];
         }       
         ?>
         
@@ -29,14 +29,15 @@
                 <a href="index.php" class = "navbar_icon"> 
                     <i class="fas fa-motorcycle"></i>
                     <div style ="color: rgb(248, 248, 248); padding-left: 7px" class="logowriting"> Shin_mini</div>
-                </a>
+                </a> <div class="rentpage">Can Rent Scooter</div>
             <ul class="navbar_items">
-                    <li><a class = "navbar_item" href="rent.php">RENT</a></li>
+                    
                     <li><a class = "navbar_item" href='review.php'>REVIEW</a></li>
                 <?php if(!isset($_SESSION['clientName'])){ ?>
                 <li><a class="navbar_item" href="signup.php">SignUp</a></li>
                 <li><a class="navbar_item" href='login.php'>LogIn</a></li>
                 <?php }else{ ?>
+                    <li><a class = "navbar_item" href="rent.php">RENT</a></li>
                     <li><a class="navbar_item" href='mypage.php?id=<?=$_SESSION['clientId']?>'>MyPage</a></li>
                     <li><a class="navbar_item" href='logout.php'>LogOut</a></li>
                 <?php } ?>
@@ -46,19 +47,9 @@
             
         <section class="contain">
 
-        <?php $sql = "SELECT * FROM rent";
-        $result = $conn->query($sql);   // query 함수를 통해 받아온 값 result 에 저장
-        if(isset($_SESSION['b_idx'])){
-            $b_idx = $_SESSION['b_idx'];
-            $clientID = $_SESSION['clientID'];
-            $b_date = $_SESSION['b_date'];
-            $contents = $_SESSION['contents'];
-            $recommend = $_SESSION['recommend'];
-        }
-        ?>
         <h2><?=$_SESSION['clientName']; echo"님 안녕하세요! "?></h2>
 
-        <?php $sql = "SELECT scooterNo, rentAble FROM electroscooter";
+        <?php $sql = "SELECT * FROM scooter";
         $result = $conn -> query($sql); ?>
         
     <div class="contain_rent">
@@ -70,12 +61,42 @@
                 </tr>
                 </thead>
                 <tbody>
+               <?php while($result->num_rows > 0){
+                    $row = $result->fetch_assoc(); 
+                   ?>
+                <tr>
+                    <th style="width: 50%"><?= $row['scooterNo']; ?></th>
+                    <th style="width: 30%"><?= $row['rentAble']; ?></th>
+                </tr>
+                <?php }  ?>
+                </tbody>
+            </table>
+
+            <?php $sql = "SELECT * FROM scooter";
+            $result = $conn -> query($sql); ?>
+            <table class ="rent_submmit">
+            <thead>
+                <tr>
+                    <th style="width: 25%">대여 오토바이</th>
+                    <th style="width: 30%">대여 시작 시간</th>
+                    <th style="width: 30%">대여 시작 시간</th>
+                    <th style="width: 15%"></th>
+                </tr>
+                </thead>
+                <tbody>
                <?php while($row = $result->fetch_assoc()){ 
                    $resultRent
                    ?>
                 <tr>
-                    <th style="width: 50%"><?= $row["scooterNo"] ?></th>
-                    <th style="width: 20%"><?= $row["rentAble"] ?></th>
+                    <th style="width: 25%"><?= $row["scooterNo"] ?></th>
+                    <th style="width: 30%"><?= $row["rentAble"] ?></th>
+                    <th style="width: 30%"><?= $row["rentAble"] ?></th>
+
+                    <th style="width: 15%">
+                        <form class="login" action="signup.php" method="POST" target="_self">
+                             <input type="submit" value ="회원가입" class="login_BTN">
+                        </form>
+                    </th>
                 </tr>
                 <?php }  ?>
                 </tbody>

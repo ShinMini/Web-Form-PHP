@@ -16,46 +16,40 @@
         session_start();
         include_once('dbconn.php');
         if(isset($_SESSION['clientName'])){
-            $id = $_SESSION['clientName'];
+            $name = $_SESSION['clientName'];
+            $id = $_SESSION['clientId'];
+            $pwd = $_SESSION['password'];
         }
-        $sql = "SELECT * from board";
-        $result = $conn->query($sql);
         ?>
         
         <nav id="navbar">
-                <a href="index.php" class = "navbar_icon"> 
+                <a href="logout.php" class = "navbar_icon"> 
                     <i class="fas fa-motorcycle"></i>
                     <div style ="color: rgb(248, 248, 248); padding-left: 7px" class="logowriting"> Shin_mini</div>
-                </a><div class="indexpage">Rent Eloctro Scooter</div>
+                </a> <div class="indexpage">Find Result!</div>
             <ul class="navbar_items">
-                    
-                    <li><a class = "navbar_item" href='review.php'>REVIEW</a></li>
+                    <li><a class="navbar_item" href="logout.php">SignUp</a></li>
+                    <li><a class="navbar_item" href='logout.php'>LogIn</a></li>
                 <?php if(!isset($_SESSION['clientName'])){ ?>
-                
-                <li><a class="navbar_item" href="signup.php">SignUp</a></li>
-                <li><a class="navbar_item" href='login.php'>LogIn</a></li>
+                 
                 <?php }else{ ?>
-                    <li><a class = "navbar_item" href="rent.php">RENT</a></li>
-                    <li><a class="navbar_item" href='mypage.php?id=<?=$_SESSION['clientId']?>'>MyPage</a></li>
-                    <li><a class="navbar_item" href='logout.php'>LogOut</a></li>
                 <?php } ?>
             </ul>
         </nav>
         <section class="contain">
-            <?php $randomImage = rand(1, 6); ?>
-        
-        <a href="index.php" style="height: 75%;
-                width: 100%">
-            <div class="contain_background" style ="background-image: url(images/<?=$randomImage?>.jpg);
-                height: 100%;
-                width: 100%;
-                background-size: cover;
-                background-repeat: no-repeat;
-                margin-top: 40px;
-                border: 5px solid #E6E23C;">
-            </div>    
-            </a>
+
+           <div class="resultpage">
+                <?=$name?> 님의 아이디 : <?=$id?>
+           </div>
+           <div class="resultpage">
+                <?=$name?> 님의 패스워드 : <?=$pwd?>
+           </div>
+            <div class="resultpageA"><a href = "logout.php">홈으로 돌아가기</a></div>
+
         </section>
+
+
+
         <footer id="footer">
     <ul class="contact">
         <li> Tel : 010-8794-3202</li>

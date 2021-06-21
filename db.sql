@@ -98,3 +98,10 @@ insert  into `review`(`b_idx`,`clientID`,`manager`,`contents`,`b_date`,`recommen
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+CREATE TABLE Scooter(scooterNo CHAR(18) NOT NULL, rentAble CHAR(18) NOT NULL, scooterIndex INTEGER NOT NULL, PRIMARY KEY(scooterNo));
+
+insert  into `Scooter`(`scooterNo`,`rentAble`,`scooterIndex`) values 
+('A236MM','Yes', 1),
+('A475MN','Yes', 2),
+('B663NN','No', 3);

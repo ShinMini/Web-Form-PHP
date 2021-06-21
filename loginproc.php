@@ -12,7 +12,7 @@ if($result->num_rows > 0){
     echo "<script>location.href='index.php'</script>";
 }else{
     echo "<script type='text/javascript'>alert('아이디 또는 비밀번호가 맞지 않습니다.$conn->error');</script>";
-    echo "<script>location.href='signin.php'</script>";
+    echo "<script>location.href='login.php'</script>";
 }
 
 ?>

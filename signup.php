@@ -28,14 +28,15 @@
                 <a href="index.php" class = "navbar_icon"> 
                     <i class="fas fa-motorcycle"></i>
                     <div style ="color: rgb(248, 248, 248); padding-left: 7px" class="logowriting"> Shin_mini</div>
-                </a>
+                </a>  <div class="indexpage" style="backgroundcolor: blue;">Sign Up</div>
             <ul class="navbar_items">
-                    <li><a class = "navbar_item" href="rent.php">RENT</a></li>
                     <li><a class = "navbar_item" href='review.php'>REVIEW</a></li>
                 <?php if(!isset($_SESSION['clientName'])){ ?>
+                  
                 <li><a class="navbar_item" href="signup.php">SignUp</a></li>
                 <li><a class="navbar_item" href='login.php'>LogIn</a></li>
                 <?php }else{ ?>
+                  <li><a class = "navbar_item" href="rent.php">RENT</a></li>
                     <li><a class="navbar_item" href='mypage.php?id=<?=$_SESSION['clientId']?>'>MyPage</a></li>
                     <li><a class="navbar_item" href='logout.php'>LogOut</a></li>
                 <?php } ?>

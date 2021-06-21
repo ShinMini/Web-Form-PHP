@@ -102,7 +102,7 @@ body {
 
     padding: 10px 10px;
     width: 100%;
-    background-color: #DAD5D2;;
+    background-color: #DAD5D2;
 }
 footer {
     box-sizing: border-box;
@@ -144,8 +144,8 @@ footer a{
 }
 
 .find_info a, .bar{
-    color: rgb(148, 147, 147);
-    font-size: 10px;
+    color: white;
+    font-size: 20px;
 }
 
 .bar{
@@ -169,4 +169,68 @@ footer a{
 
 .RentO{
     justify-content: space-between;
+}
+.mypage{
+    font-size: 25px;
+    border: 2px solid #D28271;
+    background-color: #cf9385;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+.indexpage{
+    font-size: 25px;
+    border: 2px solid #5fe480;
+    background-color: #7fe097;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+.rentpage{
+    font-size: 25px;
+    border: 2px solid #3A3532;
+    background-color: #5f5550;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+.reviewpage{
+    font-size: 25px;
+    border: 2px solid #dfbbe7;
+    background-color: #e1bceb;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+.resultpage{
+    font-size: 25px;
+    border: 3px solid #24082b;
+    background-color: lightyellow;
+    margin-bottom: 25px;
+}
+.loginpage{
+    font-size: 25px;
+    border: 2px solid #8e40a0;
+    background-color: #7e538a;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+.resultpageA {
+    border: 2px solid #24082b;
+    background-color: #dfbbe7;
+    border-radius: 15px;
+    font-size: 40px;
+    margin-top: 20px;
 }
