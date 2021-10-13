@@ -13,7 +13,7 @@
     </head>
     <body>
         <?php
-        session_start();
+        session_start();  // 세션 생성
         include_once('dbconn.php');
         if(isset($_SESSION['clientName'])){
             $id = $_SESSION['clientName'];
@@ -21,17 +21,17 @@
         $sql = "SELECT * from board";
         $result = $conn->query($sql);
         ?>
-        
+
         <nav id="navbar">
-                <a href="index.php" class = "navbar_icon"> 
+                <a href="index.php" class = "navbar_icon">
                     <i class="fas fa-motorcycle"></i>
                     <div style ="color: rgb(248, 248, 248); padding-left: 7px" class="logowriting"> Shin_mini</div>
                 </a><div class="indexpage">Rent Eloctro Scooter</div>
             <ul class="navbar_items">
-                    
+
                     <li><a class = "navbar_item" href='review.php'>REVIEW</a></li>
                 <?php if(!isset($_SESSION['clientName'])){ ?>
-                
+
                 <li><a class="navbar_item" href="signup.php">SignUp</a></li>
                 <li><a class="navbar_item" href='login.php'>LogIn</a></li>
                 <?php }else{ ?>
@@ -43,7 +43,7 @@
         </nav>
         <section class="contain">
             <?php $randomImage = rand(1, 6); ?>
-        
+
         <a href="index.php" style="height: 75%;
                 width: 100%">
             <div class="contain_background" style ="background-image: url(images/<?=$randomImage?>.jpg);
@@ -53,7 +53,7 @@
                 background-repeat: no-repeat;
                 margin-top: 40px;
                 border: 5px solid #E6E23C;">
-            </div>    
+            </div>
             </a>
         </section>
         <footer id="footer">
